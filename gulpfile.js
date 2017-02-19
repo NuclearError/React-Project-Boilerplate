@@ -1,8 +1,13 @@
 // Gulp
 var gulp = require('gulp');
 
-// Plugins
-var concat = require('gulp-concat');
+// Tools
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+
+// Gulp plugins
+//var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var stripDebug = require('gulp-strip-debug');
@@ -19,17 +24,42 @@ gulp.task('compileCSS', function() {
         .pipe(gulp.dest('public/css'));
 });
 
+// Process JS for development / testing 
+gulp.task('devJS', function() {
+    
+    gulp.src('app/js/*.js')
+        .pipe(uglify())
+        .pipe(rename("concat.js"))
+        .pipe(gulp.dest('app/js/concat'));
+    
+    browserify({
+        entries: 'app/js/concat/concat.js',
+        debug: true
+      })
+      .bundle()
+      .pipe(source('script.js'))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest('public/js'));
+});
+
 // Concatenate and minify JS  
-gulp.task('tidyJS', function() {
-    return gulp.src('app/js/*.*')
-    	// .pipe(stripDebug()) // comment this out when developing to allow console logs
-      	// .pipe(concat('scripts.js'))
-        // .pipe(rename({suffix: '.min'}))
-        /*
-        .pipe(uglify().on('error', function(e){
-            console.log(e);
-         }))
-        */
+gulp.task('cleanJS', function() {
+    
+    gulp.src('app/js/*.js')
+        .pipe(uglify())
+        .pipe(rename("concat.js"))
+        .pipe(gulp.dest('app/js/concat'));
+    
+    browserify({
+        entries: 'app/js/concat/concat.js',
+        debug: true
+    })  
+        .bundle()
+        .pipe(source('script.min.js'))
+        .pipe(buffer())
+        .pipe(stripDebug())
+        .pipe(uglify())
         .pipe(gulp.dest('public/js'));
 });
 
@@ -48,18 +78,19 @@ gulp.task('copyImages', function() {
 });
 
 // Copy index file and other HTML files to public location 
-gulp.task('copyIndex', function() {
+gulp.task('copyFiles', function() {
     gulp.src('app/*.html')
     .pipe(gulp.dest('public/'));  
 });
 
 // Watch files for changes
 gulp.task('watchFiles', function() {
-  gulp.watch('app/js/*.js', ['tidyJS', 'generateToDoList']);
-  gulp.watch('app/scss/*.scss', ['compileCSS']);
+  gulp.watch('app/js/*.js', ['devJS', 'generateToDoList']);
+  gulp.watch('app/scss/*.scss', ['compileCSS']); 
   gulp.watch('app/img/*.*', ['copyImages']);
-  gulp.watch('app/*.html', ['copyIndex']);
+  gulp.watch('app/*.html', ['copyFiles']);
 });
 
 // Gulp Tasks  
-gulp.task('default', ['tidyJS', 'compileCSS', 'generateToDoList', 'copyImages', 'copyIndex', 'watchFiles']);
+gulp.task('default', ['devJS', 'compileCSS', 'generateToDoList', 'copyFiles', 'watchFiles']);
+gulp.task('publish', ['cleanJS', 'compileCSS', 'copyImages', 'copyFiles']);

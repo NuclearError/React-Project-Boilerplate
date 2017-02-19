@@ -1,0 +1,1 @@
+function myMethod(a,n){return a+n}console.log("test");var a="apple",b="banana";
