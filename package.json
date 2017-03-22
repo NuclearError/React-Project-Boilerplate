@@ -12,6 +12,9 @@
   "browser": {
     "vue": "vue/dist/vue.common"
   },
+  "scripts": {
+    "start": "webpack --config mywebpack.config.js"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",
@@ -22,6 +25,7 @@
     "gulp-strip-debug": "^1.1.0",
     "gulp-todo": "^4.1.0",
     "gulp-uglify": "^2.0.0",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "webpack": "^2.3.0"
   }
 }
