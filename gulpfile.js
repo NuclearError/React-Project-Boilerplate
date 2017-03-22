@@ -2,9 +2,14 @@
 var gulp = require('gulp');
 
 // Tools
+/*
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+*/
+
+// THIS FILE NEEDS REWORKING TO ACCOMMODATE WEBPACK INSTEAD OF BROWSERIFY
+
 
 // Gulp plugins
 //var concat = require('gulp-concat');

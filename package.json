@@ -13,7 +13,6 @@
     "vue": "vue/dist/vue.common"
   },
   "devDependencies": {
-    "browserify": "^14.1.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.5",
     "gulp-concat": "^2.6.0",
@@ -23,8 +22,6 @@
     "gulp-strip-debug": "^1.1.0",
     "gulp-todo": "^4.1.0",
     "gulp-uglify": "^2.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
     "vue": "^2.1.10"
   }
 }
