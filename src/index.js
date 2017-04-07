@@ -11,6 +11,6 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
   </Provider>
-  , document.querySelector('.kynareth'));
+  , document.querySelector('.container'));
 
 //ReactDOM.render( <App />, document.querySelector('.container') );
