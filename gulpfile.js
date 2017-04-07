@@ -4,7 +4,6 @@ var gulp = require('gulp');
 // Gulp plugins
 var rename = require('gulp-rename');
 var sass = require('gulp-ruby-sass');
-var cache = require('gulp-cache');
 
 // GULP TASKS //
 
@@ -17,8 +16,8 @@ gulp.task('compileCSS', function() {
 
 // Watch files for changes
 gulp.task('watchFiles', function() {
-  gulp.watch('scss/*.scss', ['compileCSS']); 
+  gulp.watch('scss/*.scss', ['compileCSS']);
 });
 
-// Gulp Tasks  
+// Gulp Tasks
 gulp.task('default', ['compileCSS', 'watchFiles']);
