@@ -1,16 +1,16 @@
 export default function() {
   return [
-    { abbr: 'Jan', name: 'January' },
-    { abbr: 'Feb', name: 'February' },
-    { abbr: 'Mar', name: 'March' },
-    { abbr: 'Apr', name: 'April' },
-    { abbr: 'May', name: 'May' },
-    { abbr: 'Jun', name: 'June' },
-    { abbr: 'Jul', name: 'July' },
-    { abbr: 'Aug', name: 'August' },
-    { abbr: 'Sep', name: 'September' },
-    { abbr: 'Oct', name: 'October' },
-    { abbr: 'Nov', name: 'November' },
-    { abbr: 'Dec', name: 'December' },
+    { abbr: 'Jan', name: 'January', defaultSeason: 'Winter' },
+    { abbr: 'Feb', name: 'February', defaultSeason: 'Winter' },
+    { abbr: 'Mar', name: 'March', defaultSeason: 'Spring' },
+    { abbr: 'Apr', name: 'April', defaultSeason: 'Spring' },
+    { abbr: 'May', name: 'May', defaultSeason: 'Spring' },
+    { abbr: 'Jun', name: 'June', defaultSeason: 'Summer' },
+    { abbr: 'Jul', name: 'July', defaultSeason: 'Summer' },
+    { abbr: 'Aug', name: 'August', defaultSeason: 'Summer' },
+    { abbr: 'Sep', name: 'September', defaultSeason: 'Autumn' },
+    { abbr: 'Oct', name: 'October', defaultSeason: 'Autumn' },
+    { abbr: 'Nov', name: 'November', defaultSeason: 'Autumn' },
+    { abbr: 'Dec', name: 'December', defaultSeason: 'Winter' },
   ];
 }

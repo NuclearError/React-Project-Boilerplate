@@ -10,7 +10,15 @@ class MonthsList extends Component {
           key={month.abbr}
           className='months-list__item'
         >
-          {month.name}
+          <div className='months-list-item__label-container'>
+            <h3 className='months-list-item__label'>
+              {month.abbr}
+            </h3>
+          </div>
+          <div className='months-list-item__content-container'>
+            A small garden needn't mean small ambitions. Even in the tiniest garden, it's possible to grow a wide range of plants - even trees - and create a beautiful outdoor space that you can enjoy all year round. 
+          </div>
+
         </li>
       );
     });
