@@ -11,14 +11,14 @@ class MonthsList extends Component {
           className='months-list__item'
         >
           <div className='months-list-item__label-container'>
-            <h3 className='months-list-item__label'>
+            <span className='months-list-item__label'>
               {month.abbr}
-            </h3>
+            </span>
           </div>
           <div className='months-list-item__content-container'>
             A small garden needn't mean small ambitions. Even in the tiniest garden,
             it's possible to grow a wide range of plants - even trees - and create a
-            beautiful outdoor space that you can enjoy all year round. 
+            beautiful outdoor space that you can enjoy all year round.
           </div>
 
         </li>
@@ -28,7 +28,7 @@ class MonthsList extends Component {
 
   render() {
     return (
-      <ul className="calendar__months-list">
+      <ul className="months-list">
         {this.renderList()}
       </ul>
     );

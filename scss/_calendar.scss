@@ -1,17 +1,17 @@
 
 .calendar {
   border: 1px solid purple;
+}
 
-  &__months-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: 1px solid red;
-  }
+.months-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid red;
 }
 
 .months-list__item:nth-child(2n) {
-  background: #fef;
+  //background: #fef;
 }
 
 .months-list__item {
@@ -26,7 +26,7 @@
 
   &__label-container {
     width: 20%;
-    background: wheat;
+    //background: wheat;
     border:1px solid green;
     text-align: center;
   }

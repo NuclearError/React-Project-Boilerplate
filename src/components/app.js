@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import UIControls from './ui-controls';
 import Calendar from './calendar';
 
 export default class App extends Component {
@@ -8,6 +9,7 @@ export default class App extends Component {
     return (
       <div className='hello'>
         <h1>Kynareth</h1>
+        <UIControls />
         <Calendar />
       </div>
     );
