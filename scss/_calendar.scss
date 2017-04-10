@@ -17,13 +17,22 @@
 .months-list__item {
   & > div {
     display: inline-block;
-    padding: 0 0.5rem;
+    padding: 0 2.5%;
+    vertical-align: top;
   }
 }
 
-.months-list-item__label-container {
-  width: 3rem;
-  background: wheat;
-  border:1px solid green;
-  text-align: center;
+.months-list-item {
+
+  &__label-container {
+    width: 20%;
+    background: wheat;
+    border:1px solid green;
+    text-align: center;
+  }
+
+  &__content-container {
+    border: 1px solid blue;
+    width: 80%;
+  }
 }
