@@ -18,7 +18,7 @@ npm install
 npm start
 ````
 
-A local version of the project can be viewed at [http://localhost:8080/](http://localhost:8080/), which is the default location used by webpack-dev-server. In the case that port 8080 is in use, edit the webpack dev server config file:
+A local version of the project can be viewed at [http://localhost:8080/index.html](http://localhost:8080/index.html). Port 8080 is the default used by webpack-dev-server. In the case that port 8080 is in use, edit the webpack dev server config file:
 
 `node_modules\webpack-dev-server\bin\webpack-dev-server.js`
 
