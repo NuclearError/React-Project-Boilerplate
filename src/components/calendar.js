@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import MonthsList from '../containers/months-list';
 
-export default class Calendar extends Component {
+class Calendar extends Component {
   render() {
     return (
       <div className='calendar'>
@@ -12,3 +12,9 @@ export default class Calendar extends Component {
     );
   }
 }
+
+Calendar.propTypes = {
+  //
+};
+
+export default Calendar;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import InputForm from './input-form';
 
 const UIControls = () => (
@@ -16,5 +16,10 @@ const UIControls = () => (
     <InputForm />
   </div>
 );
+
+UIControls.propTypes = {
+  //
+};
+
 
 export default UIControls;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Month from './month'
+import PropTypes from 'prop-types';
+import Month from './month';
 
 class MonthsList extends Component {
 
@@ -29,5 +30,9 @@ function mapStateToProps(state) {
     months: state.months
   }
 }
+
+MonthsList.propTypes = {
+  months: PropTypes.object.isRequired,
+};
 
 export default connect(mapStateToProps)(MonthsList);

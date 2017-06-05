@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import TaskGroup from './task-group';
 
 const Month = props => (
   <li
@@ -8,15 +10,26 @@ const Month = props => (
     <div className='months-list-item__label-container'>
       <span
         className='months-list-item__label'
-        onClick={() => onMonthSelect}
+        onClick={() => this.props.onMonthSelect}
       >
         {props.abbr}
       </span>
     </div>
     <div className='months-list-item__content-container'>
-      <p>{props.abbr}</p>
+      <TaskGroup taskTitle={this.props.taskTitle} plantName={this.props.Carrots} />
     </div>
   </li>
 );
+
+Month.defaultProps = {
+  plantName: 'Peas',
+  taskTitle: 'Sow Indoors'
+};
+
+Month.propTypes = {
+  plantName: PropTypes.string,
+  taskTitle: PropTypes.string,
+  onMonthSelect: PropTypes.func.isRequired,
+};
 
 export default Month;
