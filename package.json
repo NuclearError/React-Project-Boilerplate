@@ -16,7 +16,7 @@
       "enzyme",
       "jest-enzyme"
     ]
-},
+  },
   "author": "Angela Cullen <esmearmitage@gmail.com>",
   "homepage": "http://www.angelacullen.com",
   "license": "ISC",

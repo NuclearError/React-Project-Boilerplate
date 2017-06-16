@@ -7,11 +7,18 @@ describe('<App /> component', () => {
   // variable declarations here
   let app;
 
-  beforeEach( () => {
-    app = shallow(<App />);
-  });
+  // beforeEach(() => {
+  //   app = shallow( <App /> );
+  // });
+
+  // beforeEach(() => {
+  //   app = shallow(
+  //     <App />
+  //   );
+  // });
 
   it('renders on the page', () => {
+    app = shallow(<App />);
     expect(app.length).toBe(1);
     // expect(app).toMatchSnapshot();
   });
