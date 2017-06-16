@@ -1,3 +1,7 @@
+jest.unmock('react');
+jest.unmock('enzyme');
+jest.unmock('../components/app');
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../components/app';
