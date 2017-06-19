@@ -5,19 +5,33 @@ import Month from './month';
 
 class MonthsList extends Component {
 
+  testData() {
+      return this.props.data.map( (thing) => {
+          return (
+            <span>{thing.name}<br/></span>
+          );
+      });
+  }
+
   renderList() {
     return this.props.months.map( (month) => {
       return (
-        <Month abbr={month.abbr} />
+        <Month key={month.abbr} abbr={month.abbr} />
       );
     });
   };
 
   render() {
     return (
-      <ul className="months-list">
-        {this.renderList()}
-      </ul>
+        <div>
+          <ul className="months-list">
+            {this.renderList()}
+          </ul>
+          <div>
+              TEST DATA:
+              {this.testData()}
+          </div>
+        </div>
     );
   };
 
@@ -27,12 +41,14 @@ function mapStateToProps(state) {
   // Whatever is returned will show up as props inside MonthsList
   // ie. contained within 'this.props'
   return {
-    months: state.months
+    months: state.months,
+    data: state.data
   }
 }
 
 MonthsList.propTypes = {
-  months: PropTypes.object.isRequired,
+  months: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default connect(mapStateToProps)(MonthsList);

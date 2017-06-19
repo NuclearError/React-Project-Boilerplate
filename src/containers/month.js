@@ -16,20 +16,23 @@ const Month = props => (
       </span>
     </div>
     <div className='months-list-item__content-container'>
-      <TaskGroup taskTitle={this.props.taskTitle} plantName={this.props.Carrots} />
+        {/* 
+      <TaskGroup taskTitle={this.props.taskTitle} plantName={this.props.plantName} />
+      */ }
     </div>
   </li>
 );
 
 Month.defaultProps = {
   plantName: 'Peas',
-  taskTitle: 'Sow Indoors'
+  taskTitle: 'Sow Indoors',
+  onMonthSelect: () => {}
 };
 
 Month.propTypes = {
   plantName: PropTypes.string,
   taskTitle: PropTypes.string,
-  onMonthSelect: PropTypes.func.isRequired,
+  onMonthSelect: PropTypes.func,
 };
 
 export default Month;
