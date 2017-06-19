@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-
-import BookList from '../containers/book-list';
-import BookDetail from '../containers/book-detail';
+import PropTypes from 'prop-types';
+import UIControls from './ui-controls';
+import Calendar from './calendar';
 
 export default class App extends Component {
+
   render() {
     return (
-      <section className='book-list__container'>
-        <BookList />
-        <BookDetail />
-      </section>
+      <div className='hello'>
+        <h1>Kynareth</h1>
+        <UIControls />
+        <Calendar />
+      </div>
     );
   }
+
 }
