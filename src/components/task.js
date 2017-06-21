@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 import Item from './item';
 
 const Task = props => (
-  <div className="task">
-    <span className="task__title">{this.props.taskTitle}</span>
-    <Item plantName={this.props.plantName}/>
-  </div>
+    <li className="task__item">
+        {props.variety !== '' ?
+            <span className="task__item-variety">{props.variety} </span>
+            :
+            ''
+        }
+        <span className="task__item-name">{props.name}</span>
+    </li>
 );
 
+Task.defaultProps = {
+  variety: ''
+};
+
 Task.propTypes = {
-  plantName: PropTypes.string.isRequired,
-  taskTitle: PropTypes.string.isRequired,
+  variety: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
 
 export default Task;

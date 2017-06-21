@@ -40,7 +40,7 @@ class TaskGroup extends Component {
 
       if(this.taskTypeIsUsed(this.props.data, this.props.thisMonth, taskType)) {
           return (
-            <li className={`task ${taskClass}`}>
+            <li className={`task task--${taskClass}`}>
                 <h3 className={`task__title task__title--${taskClass}`}>{taskType}</h3>
                 <ul className="task__item-list">
                     {this.renderTaskItems(taskType)}
@@ -54,23 +54,16 @@ class TaskGroup extends Component {
       return this.props.data.map( (item) => {
           if(this.taskHasItems(item.tasks, this.props.thisMonth, taskType)) {
               return (
-                  <li className="task__item">
-                      {item.variety ?
-                          <span className="task__item-variety">{item.variety} </span>
-                          :
-                          ''
-                      }
-                      <span className="task__item-name">{item.name}</span>
-                  </li>
+                  <Task variety={item.variety} name={item.name} />
               );
           }
       });
   };
 
-  //  Refactor tasks below to loop through a reducer list 
+  //  Refactor tasks below to loop through a reducer list
   render() {
     return (
-        <ul className="task-group">
+        <ul className="task-container">
             {this.renderTask("Sow Indoors")}
             {this.renderTask("Sow Outside")}
             {this.renderTask("Plant Outside")}
