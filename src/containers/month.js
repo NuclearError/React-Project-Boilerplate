@@ -3,36 +3,24 @@ import PropTypes from 'prop-types';
 import TaskGroup from './task-group';
 
 const Month = props => (
-  <li
-    key={props.abbr}
-    className='months-list__item'
-  >
+  <li key={props.abbr} className='months-list__item'>
     <div className='months-list-item__label-container'>
-      <span
-        className='months-list-item__label'
-        onClick={() => this.props.onMonthSelect}
-      >
+      <span className='months-list-item__label' onClick={() => this.props.onMonthSelect}>
         {props.abbr}
       </span>
     </div>
-    <div className='months-list-item__content-container'>
-        {/* 
-      <TaskGroup taskTitle={this.props.taskTitle} plantName={this.props.plantName} />
-      */ }
+    <div className='months-list-item__task-container'>
+      <TaskGroup thisMonth={props.abbr} />
     </div>
   </li>
 );
 
 Month.defaultProps = {
-  plantName: 'Peas',
-  taskTitle: 'Sow Indoors',
   onMonthSelect: () => {}
 };
 
 Month.propTypes = {
-  plantName: PropTypes.string,
-  taskTitle: PropTypes.string,
-  onMonthSelect: PropTypes.func,
+  onMonthSelect: PropTypes.func
 };
 
 export default Month;

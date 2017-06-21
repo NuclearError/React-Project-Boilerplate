@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const InputForm = () => (
   <div>
-    Input Form Goes Here
+    {/* Input Form Goes Here */}
   </div>
 );
 
