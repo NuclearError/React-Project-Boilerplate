@@ -10,7 +10,7 @@
 }
 
 .note--plant {
-	@include noteGradient($plant);
+	@include noteGradient($plant-outside);
 }
 
 .note--harvest {
@@ -18,7 +18,7 @@
 }
 
 .note--sow-outdoors {
-	@include noteGradient($sow-outdoors);
+	@include noteGradient($sow-outside);
 }
 
 .note--maintenance {
