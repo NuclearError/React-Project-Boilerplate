@@ -7,15 +7,15 @@ class MonthsList extends Component {
 
   renderList() {
     return this.props.months.map(month =>
-      <Month key={month.abbr} abbr={month.abbr} />
+      <Month key={month.abbr} abbr={month.abbr} name={month.name} onMonthSelect={this.props.onMonthSelect} />
     );
   };
 
   render() {
     return (
-          <ul className="months-list">
-            {this.renderList()}
-          </ul>
+      <ul className="months-list">
+        {this.renderList()}
+      </ul>
     );
   };
 
@@ -30,7 +30,8 @@ function mapStateToProps(state) {
 }
 
 MonthsList.propTypes = {
-  months: PropTypes.array.isRequired
+  months: PropTypes.array.isRequired,
+  onMonthSelect: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(MonthsList);

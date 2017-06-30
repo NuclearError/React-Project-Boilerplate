@@ -38,7 +38,7 @@ class TaskGroup extends Component {
       .map(item => <Task variety={item.variety} name={item.name} />);
   };
 
-  //  Refactor tasks below to loop through a reducer list
+  //  TODO: Refactor tasks below to loop through a reducer list
   render() {
     return (
       <ul className="task-container">
