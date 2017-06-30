@@ -6,24 +6,11 @@ import Task from '../components/task';
 class TaskGroup extends Component {
 
   checkAgainstMonthAndType(list, givenMonth, givenType) {
-    let resultsArray = list.filter(item => item.month === givenMonth && item.type === givenType);
-    if(resultsArray.length) {
-      return true;
-    }
+    return list.some(item => item.month === givenMonth && item.type === givenType);
   }
 
   taskTypeIsUsed(list, givenMonth, givenType) {
-    let taskIsUsed = false;
-
-    // verification is an array containing lots of
-    // 'undefined' + occasionally true boolean
-    const verification = list.map( (item) => {
-      if(this.checkAgainstMonthAndType(item.tasks, givenMonth, givenType) !== undefined) {
-        taskIsUsed = true;
-      }
-    });
-
-    return taskIsUsed;
+    return list.some(item => this.checkAgainstMonthAndType(item.tasks, givenMonth, givenType));
   };
 
   taskHasItems(list, givenMonth, givenType) {
@@ -46,13 +33,9 @@ class TaskGroup extends Component {
   };
 
   renderTaskItems(taskType) {
-    return this.props.data.map( (item) => {
-      if(this.taskHasItems(item.tasks, this.props.thisMonth, taskType)) {
-        return (
-          <Task variety={item.variety} name={item.name} />
-        );
-      }
-    });
+    return this.props.data
+      .filter(item => this.taskHasItems(item.tasks, this.props.thisMonth, taskType))
+      .map(item => <Task variety={item.variety} name={item.name} />);
   };
 
   //  Refactor tasks below to loop through a reducer list
