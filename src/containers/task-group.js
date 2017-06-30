@@ -22,7 +22,7 @@ class TaskGroup extends Component {
 
     if(this.taskTypeIsUsed(this.props.data, this.props.thisMonth, taskType)) {
       return (
-        <li className={`task task--${taskClass}`}>
+        <li key={`key-${taskClass}`} className={`task task--${taskClass}`}>
           <h3 className={`task__title task__title--${taskClass}`}>{taskType}</h3>
           <ul className="task__item-list">
             {this.renderTaskItems(taskType)}
@@ -35,7 +35,7 @@ class TaskGroup extends Component {
   renderTaskItems(taskType) {
     return this.props.data
       .filter(item => this.taskHasItems(item.tasks, this.props.thisMonth, taskType))
-      .map(item => <Task variety={item.variety} name={item.name} />);
+      .map(item => <Task key={`task-${item.name}`} variety={item.variety} name={item.name} />);
   };
 
   //  TODO: Refactor tasks below to loop through a reducer list

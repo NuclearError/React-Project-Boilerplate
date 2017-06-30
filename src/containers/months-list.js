@@ -7,7 +7,7 @@ class MonthsList extends Component {
 
   renderList() {
     return this.props.months.map(month =>
-      <Month key={month.abbr} abbr={month.abbr} name={month.name} onMonthSelect={this.props.onMonthSelect} />
+      <Month key={`month-${month.abbr}`} abbr={month.abbr} name={month.name} onMonthSelect={this.props.onMonthSelect} />
     );
   };
 

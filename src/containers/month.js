@@ -10,7 +10,7 @@ const Month = (props) => {
   };
 
   return (
-    <li key={props.abbr} className='months-list__item'>
+    <li key={props.key} className='months-list__item'>
       <div className='months-list-item__label-container'>
         <span
           className='months-list-item__label'
@@ -26,8 +26,12 @@ const Month = (props) => {
   );
 };
 
+Month.defaultProps = {
+  key: ''
+};
+
 Month.propTypes = {
-  key: PropTypes.string.isRequired,
+  key: PropTypes.string,
   abbr: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onMonthSelect: PropTypes.func.isRequired

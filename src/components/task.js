@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const Task = props => (
-  <li className="task__item">
+  <li key={`task-item-${props.name}`} className="task__item">
     {props.variety ?
       <span className="task__item-variety">{props.variety} </span>
       :
