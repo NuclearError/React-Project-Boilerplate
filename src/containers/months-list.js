@@ -6,11 +6,9 @@ import Month from './month';
 class MonthsList extends Component {
 
   renderList() {
-    return this.props.months.map( (month) => {
-      return (
-        <Month key={month.abbr} abbr={month.abbr} />
-      );
-    });
+    return this.props.months.map(month =>
+      <Month key={month.abbr} abbr={month.abbr} />
+    );
   };
 
   render() {
