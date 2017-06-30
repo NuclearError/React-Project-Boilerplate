@@ -6,12 +6,7 @@ import Task from '../components/task';
 class TaskGroup extends Component {
 
   checkAgainstMonthAndType(list, givenMonth, givenType) {
-    let resultsArray = [];
-    const loop = list.map( (item) => {
-      if(item.month === givenMonth && item.type === givenType) {
-        resultsArray.push(item);
-      };
-    });
+    let resultsArray = list.filter(item => item.month === givenMonth && item.type === givenType);
     if(resultsArray.length) {
       return true;
     }
