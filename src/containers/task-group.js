@@ -5,7 +5,7 @@ import Task from '../components/task';
 
 class TaskGroup extends Component {
 
-  processTaskList(list, givenMonth, givenType) {
+  checkAgainstMonthAndType(list, givenMonth, givenType) {
     let resultsArray = [];
     const loop = list.map( (item) => {
       if(item.month === givenMonth && item.type === givenType) {
@@ -23,7 +23,7 @@ class TaskGroup extends Component {
     // verification is an array containing lots of
     // 'undefined' + occasionally true boolean
     const verification = list.map( (item) => {
-      if(this.processTaskList(item.tasks, givenMonth, givenType) !== undefined) {
+      if(this.checkAgainstMonthAndType(item.tasks, givenMonth, givenType) !== undefined) {
         taskIsUsed = true;
       }
     });
@@ -32,7 +32,7 @@ class TaskGroup extends Component {
   };
 
   taskHasItems(list, givenMonth, givenType) {
-    return this.processTaskList(list, givenMonth, givenType);
+    return this.checkAgainstMonthAndType(list, givenMonth, givenType);
   };
 
   renderTask(taskType) {
