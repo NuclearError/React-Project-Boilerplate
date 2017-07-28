@@ -15,27 +15,26 @@ class TaskGroup extends Component {
   }
 
   checkAgainstMonthAndType(list, givenMonth, givenType) {
-    console.log("checkAgainstMonthAndType says list, givenMonth, givenType = " + list + "; " + givenMonth + "; " + givenType)
     return list.some(item => item.month === givenMonth && item.type === givenType);
   }
 
   taskTypeIsUsed(list, givenMonth, givenType) {
-    console.log("taskTypeIsUsed says list, givenMonth, givenType = " + list + "; " + givenMonth + "; " + givenType)
     return list.some(item => this.checkAgainstMonthAndType(item.tasks, givenMonth, givenType));
   };
 
   taskHasItems(list, givenMonth, givenType) {
-    console.log("taskHasItems says list, givenMonth, givenType = " + list + "; " + givenMonth + "; " + givenType)
     return this.checkAgainstMonthAndType(list, givenMonth, givenType);
   };
 
   renderTaskGroup(tasks) {
-    console.log("renderTaskGroup says tasks = " + tasks);
-    tasks.map(task => task.name).forEach(this.renderTask);
+    // tasks.map(task => task.name).forEach(this.renderTask);
+    const taskNames = tasks.map(task => task.name);
+    // taskNames.forEach(taskName => this.renderTask(taskName));
+    console.log("taskNames = " + taskNames + "; typeof = " + typeof(taskNames) + "; taskNames[0] = " + taskNames[0] + "; typeof = " + typeof(taskNames[0]))
+    taskNames.forEach(taskName => this.renderTask(`"${taskName}"`));
   };
 
   renderTask(taskType) {
-    console.log("renderTask says taskType = " + taskType);
     const taskClass = taskType.toLowerCase().replace(" ", "-");
 
     if( this.taskTypeIsUsed(this.props.data, this.props.thisMonth, taskType) ) {
@@ -51,7 +50,6 @@ class TaskGroup extends Component {
   };
 
   renderTaskItems(taskType) {
-    console.log("renderTaskItems says taskType = " + taskType);
     return this.props.data
       .filter(item => this.taskHasItems(item.tasks, this.props.thisMonth, taskType))
       .map(item => <Task key={`task-${item.name}`} variety={item.variety} name={item.name} />);
@@ -60,7 +58,8 @@ class TaskGroup extends Component {
   render() {
     return (
       <ul className="task-container">
-        {this.renderTaskGroup(this.props.taskTypes)}
+        {this.renderTaskGroup(this.props.taskTypes) /* THIS DOESN'T WORK */}
+        {/* {this.renderTask("Sow Indoors")}  // THIS STILL WORKS */}
       </ul>
     );
   };
