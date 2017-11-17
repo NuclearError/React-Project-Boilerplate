@@ -30,8 +30,16 @@ For this project, Gulp is used to convert Sass files to CSS. Using `gulp` on the
 
 ### Unit Testing
 
-Unit tests can be found in src/tests and use Jest with Enzyme. To run all tests, run `jest` or `npm test`. To run an individual test, use:
+Unit tests can be found in src/tests and use Jest with Enzyme. 
+
+To run all tests, use:
 
 ````
-jest my-test-file
+npm test
+````
+
+To run one test file, use:
+
+````
+npm test my-component.test.jsx
 ````
