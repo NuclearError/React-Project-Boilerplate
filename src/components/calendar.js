@@ -11,7 +11,6 @@ class Calendar extends Component {
   render() {
     return (
       <div className='calendar'>
-        {/* <h2>Calendar</h2> */}
         <MonthsList onMonthSelect={this.openMonthView} />
       </div>
     );
