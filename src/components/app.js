@@ -7,7 +7,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='hello'>
+      <div className='kynareth'>
         <h1>Kynareth</h1>
         <UIControls />
         <Calendar />

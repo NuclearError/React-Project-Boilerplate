@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TaskGroup from './task-group';
+import TaskGroup from '../containers/task-group';
 
 const Month = (props) => {
 
