@@ -1,6 +1,6 @@
 
 .calendar {
-  border: 1px solid purple;
+  border: 1px solid $grey-dark;
 }
 
 .months-list {
@@ -10,12 +10,16 @@
 }
 
 .months-list__item:nth-child(2n) {
-  background: #efefef;
+  background: $grey-light;
 }
 
 .months-list__item {
 
-    border-top: 1px solid #333;
+    border-top: 1px solid $grey-dark;
+
+  &:first-child {
+    border-top: none;
+  }
 
   & > div {
     display: inline-block;

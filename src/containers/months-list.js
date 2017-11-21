@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Month from './month';
+import Month from '../components/month';
 
 class MonthsList extends Component {
 
   renderList() {
-    return this.props.months.map( (month) => {
-      return (
-        <Month key={month.abbr} abbr={month.abbr} />
-      );
-    });
+    return this.props.months.map(month =>
+      <Month key={`month-${month.abbr}`} abbr={month.abbr} name={month.name} onMonthSelect={this.props.onMonthSelect} />
+    );
   };
 
   render() {
     return (
-          <ul className="months-list">
-            {this.renderList()}
-          </ul>
+      <ul className="months-list">
+        {this.renderList()}
+      </ul>
     );
   };
 
@@ -32,7 +30,8 @@ function mapStateToProps(state) {
 }
 
 MonthsList.propTypes = {
-  months: PropTypes.array.isRequired
+  months: PropTypes.array.isRequired,
+  onMonthSelect: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(MonthsList);
