@@ -1,0 +1,30 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "globals": {
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": [
+      'error', {
+        devDependencies: [
+          ".storybook/**",
+          "**/*.stories.js",
+          "**/*.test.js"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": ".webpack.config.js"
+      }
+    }
+  }
+}

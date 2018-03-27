@@ -1,5 +1,8 @@
-# React-Project-Boilerplate
-A boilerplate for personal projects built in React
+# Hircine
+
+Hircine: The Prince of the hunt, sport, *The Great Game*, and *The Chase*
+_________________________________________________________________________
+Game development, using [React Game Kit](https://github.com/FormidableLabs/react-game-kit)
 
 ### Get Started
 
