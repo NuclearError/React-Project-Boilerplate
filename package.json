@@ -1,9 +1,8 @@
 {
-  "name": "Kynareth",
   "version": "1.0.0",
-  "description": "Gardening Calendar Tool",
+  "description": "Boilerplate starting point for building personal projects in React",
   "main": "index.js",
-  "repository": "https://github.com/NuclearError/Kynareth.git",
+  "repository": "",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "jest",
