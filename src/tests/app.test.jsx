@@ -1,5 +1,5 @@
-// import { configure } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import React from 'react';
 import { shallow, render } from 'enzyme';
@@ -16,7 +16,7 @@ describe('<App /> component', () => {
 
   it('renders on the page', () => {
     const app = shallow( <App /> );
-    // expect(app.find(Calendar).length).toBe(1); //
+    // expect(app.find(Blah).length).toBe(1); //
   });
 
 });

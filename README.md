@@ -22,8 +22,6 @@ Change the port number from 8080 to any other valid port number.
 
 For this project, Gulp is used to convert Sass files to CSS. Using `gulp` on the command line will watch the files contained in the SCSS folder and compile as required. Note that this process uses gulp-ruby-sass, so you may need to install Ruby if it is not already installed.
 
-TODO: replace gulp with webpack
-
 ### Unit Testing
 
 Unit tests can be found in src/tests and use Jest with Enzyme.

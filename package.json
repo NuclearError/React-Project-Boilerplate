@@ -13,8 +13,6 @@
     "unmockedModulePathPatterns": [
       "react",
       "react-dom",
-      "react-redux",
-      "react-router",
       "enzyme",
       "jest-enzyme"
     ]
@@ -30,6 +28,14 @@
     "babel-preset-react": "^6.1.18",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-friendly-formatter": "^4.0.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.6",
@@ -44,8 +50,5 @@
     "babel-preset-stage-1": "^6.1.18",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "redux": "^3.7.2"
   }
 }

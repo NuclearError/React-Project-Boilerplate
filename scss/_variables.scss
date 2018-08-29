@@ -18,12 +18,6 @@ $base-black: 	   #000; /* base colours are useful when using lighten/darken etc 
 $grey-dark: 		 #333;
 $grey-light: 	   #efefef;
 
-$sow-indoors:      #b6e026; // pale green
-$plant-outside:    #6ac10d; // green
-$harvest:          #e5b700; // amber
-$sow-outside:      #15965c; // teal
-$maintenance:      #04bdce; // light blue
-
 $spacing: 		   15px;
 $rounded:        $font-size-base/4;
 
@@ -92,11 +86,4 @@ $rounded:        $font-size-base/4;
     background: -ms-linear-gradient(top,  $args);
     background: linear-gradient(to bottom,  $args);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
-}
-
-@mixin noteGradient($baseColor) {
-    $baseColor2:  darken( (saturate($baseColor, 5%)), 5% );
-    $baseColor3:  lighten($baseColor2, 7.5%);
-    $baseColor4:  mix($base-white, $baseColor3, 15%);
-    @include gradientFallbacks($baseColor, $baseColor 0%, $baseColor2 40%, $baseColor3 60%, $baseColor4 100%);
 }
