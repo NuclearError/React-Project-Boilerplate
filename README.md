@@ -1,5 +1,5 @@
-# React Project Boilerplate
-For building personal projects in React
+# React-Canvas-Game
+An experiment in building a game using React and HTML Canvas.
 
 ------------------------
 

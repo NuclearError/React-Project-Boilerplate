@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Boilerplate starting point for building personal projects in React",
+  "description": "Experimenting with building a game structure using React and HTML Canvas",
   "main": "index.js",
   "repository": "",
   "scripts": {
@@ -49,6 +49,6 @@
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react-dom": "^16.1.1"
   }
 }
