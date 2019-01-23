@@ -1,5 +1,5 @@
-# React-Canvas-Game
-An experiment in building a game using React and HTML Canvas.
+# React-Canvas-Boilerplate
+Boilerplate for projects using React and HTML Canvas
 
 ------------------------
 

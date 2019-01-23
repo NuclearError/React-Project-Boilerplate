@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "description": "Experimenting with building a game structure using React and HTML Canvas",
+  "description": "Boilerplate for projects using React and HTML Canvas",
   "main": "index.js",
   "repository": "",
   "scripts": {
