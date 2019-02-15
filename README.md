@@ -1,5 +1,5 @@
-# React-Canvas-Boilerplate
-Boilerplate for projects using React and HTML Canvas
+# React Project Boilerplate
+For building personal projects in React
 
 ------------------------
 
