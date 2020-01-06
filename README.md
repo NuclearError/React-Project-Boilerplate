@@ -1,5 +1,12 @@
-# React Project Boilerplate
+# React Project Boilerplate (Legacy)
 For building personal projects in React
+
+This legacy boilerplate uses:
+
+* react, react-dom
+* webpack-dev-server
+* scss (with gulp compiling)
+* jest/enzyme
 
 ------------------------
 
